@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rac3cont3nt</title>
+    <!-- Google Fonts for BeamNG-like look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Side Images -->
+    <img src="911.png" class="side-image left top1" alt="Left Decoration Top">
+    <img src="M5.png" class="side-image right top1" alt="Right Decoration Top">
+    <img src="lowgan.png" class="side-image left top2" alt="Left Decoration Top 2">
+    <img src="skyline.png" class="side-image right top2" alt="Right Decoration Top 2">
+    <img src="M's.png" class="side-image left bottom" alt="Left Decoration Bottom">
+    <img src="carmeet.png" class="side-image right bottom" alt="Right Decoration Bottom">
+
+    <div class="container">
+        <header>
+            <h1 class="server-title fade-text"><em>Welcome to Rac3cont3nt</em></h1>
+            <p class="fade-text">IP: 23.88.73.88:34127</p>
+        </header>
+
+        <section>
+            <h2 class="fade-text">Active Mods</h2>
+            <ul class="fade-text">
+                <li>WEEK 1 PACK</li>
+                <li>ENHANCED INTERIOR CAMERA</li>
+                <li>Custom Skybox</li>
+                <li>ENHANCED CHASE CAMERA</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="fade-text">Inactive Mods</h2>
+            <ul class="fade-text">
+                <li>WEEK 2 PACK</li>
+                <li>WEEK 3 PACK</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="fade-text">Whitelist</h2>
+            <ul class="fade-text">
+                <li>Max_Verstappen_33</li>
+                <li>cxshstefan</li>
+                <li>Andrei_Lupau</li>
+                <li>FC_Justin2009</li>
+                <li>snappy1</li>
+                <li>marian345</li>
+                <li>davidf_funn</li>
+                <li>RzW32</li>
+                <li>Gabriel232131</li>
+                <li>AndreiPulai1</li>
+                <li>David110</li>
+                <li>albastrel</li>
+                <li>ArmVni901</li>
+                <li>TheLimeGreen</li>
+                <li>se1bi57</li>
+                <li>Rpetas</li>
+                <li>ReiK</li>
+                <li>Reiik</li>
+                <li>mateo3333</li>
+                <li>badearttt</li>
+                <li>robychistox</li>
+                <li>Ericanu311</li>
+                <li>198hitta</li>
+                <li>RobySefuThau</li>
+                <li>B4b0Y</li>
+                <li>ttiktok.ionut1</li>
+                <li>cristian111</li>
+                <li>Necazu1</li>
+                <li>KDJ1Cpm</li>
+                <li>FNVICTOR895</li>
+                <li>andrei893</li>
+                <li>D3ATH</li>
+                <li>CHOLO3K</li>
+                <li>Toji</li>
+                <li>Darius_ishowspeed</li>
+                <li>Fablooo</li>
+                <li>MathisssTV</li>
+                <li>b0bsterr</li>
+                <li>Rober121</li>
+                <li>AndreiX266</li>
+                <li>jobama</li>
+                <li>St3fanFra</li>
+                <li>mihai747</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="fade-text">Rules</h2>
+            <ol class="fade-text">
+                <li>No griefing</li>
+                <li>Be respectful</li>
+                <li>Have fun</li>
+            </ol>
+        </section>
+    </div>
+
+    <!-- Contact Footer -->
+    <footer class="contact-footer fade-text">
+        <h2>Contact Us</h2>
+        <div class="contact-links">
+            <a href="https://discord.gg/qvftbcPB46" target="_blank">Discord</a>
+            <a href="https://www.tiktok.com/@anttoniozz" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/1.antonio7/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Side images slide-in on page load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Text fade-in on scroll
+        const faders = document.querySelectorAll('.fade-text');
+        const appearOptions = { threshold: 0.1 };
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+/* General Styles */
+html, body {
+    height: auto;          
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #eee;
+}
+
+body {
+    display: block;        
+    text-align: center;    
+}
+
+.container {
+    max-width: 700px;      
+    margin: 20px auto;     
+    padding: 20px;
+    position: relative;    
+    z-index: 1;            
+}
+
+ul, ol {
+    list-style-position: inside;
+    padding: 0;
+}
+
+/* Side Images Styling - Animated Slide-in with Hover Scale */
+.side-image {
+    position: absolute;      
+    width: 30%;           
+    height: auto;         
+    max-width: none;      
+    z-index: 0;
+    opacity: 0;
+    --slide-x: 0px; /* store slide distance */
+    transition: transform 0.5s ease-out, opacity 1.5s ease-out;
+}
+
+/* Individual image positions with horizontal slide-in, keeping original TOP values */
+
+/* Left Top 1 - 911.png */
+.side-image.left.top1 {
+    left: -100px;       
+    top: 200px;         
+}
+body.loaded .side-image.left.top1 {
+    --slide-x: 150px;
+}
+
+/* Right Top 1 - M5.png */
+.side-image.right.top1 {
+    right: -100px;      
+    top: 200px;         
+}
+body.loaded .side-image.right.top1 {
+    --slide-x: -150px;
+}
+
+/* Left Top 2 - lowgan.png */
+.side-image.left.top2 {
+    left: -100px;
+    top: 700px;
+}
+body.loaded .side-image.left.top2 {
+    --slide-x: 150px;
+}
+
+/* Right Top 2 - skyline.png */
+.side-image.right.top2 {
+    right: -100px;
+    top: 700px;
+}
+body.loaded .side-image.right.top2 {
+    --slide-x: -150px;
+}
+
+/* Left Bottom - M's.png */
+.side-image.left.bottom {
+    left: -100px;
+    top: 1200px;
+}
+body.loaded .side-image.left.bottom {
+    --slide-x: 150px;
+}
+
+/* Right Bottom - carmeet.png */
+.side-image.right.bottom {
+    right: -100px;
+    top: 1200px;
+}
+body.loaded .side-image.right.bottom {
+    --slide-x: -150px;
+}
+
+/* Apply slide-in transform */
+body.loaded .side-image {
+    transform: translateX(var(--slide-x)) scale(1);
+    opacity: 1;
+}
+
+/* Hover: expand image without affecting slide-in */
+body.loaded .side-image:hover {
+    transform: translateX(var(--slide-x)) scale(1.1);
+    z-index: 2; /* bring to front on hover */
+}
+
+/* Text Fade-in on scroll */
+.fade-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.fade-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: headings font */
+.server-title {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* List spacing */
+ul li, ol li {
+    margin-bottom: 5px;
+}
+
+/* Footer Styling */
+.contact-footer {
+    margin-top: 50px;
+    padding: 30px 20px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.contact-footer h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.contact-links a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-links a:hover {
+    color: #00bfff;  /* light blue hover effect */
+    transform: scale(1.1);
+}
